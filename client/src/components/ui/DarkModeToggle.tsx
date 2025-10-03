@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import bird from '../../assets/birts.png';
+import star from '../../assets/stars.png';
+import cloud from '../../assets/cloud.png';
 
 export default function DarkModeToggle() {
 
@@ -76,15 +79,15 @@ export default function DarkModeToggle() {
         </div>
       </div>
       <div className={`absolute top-1 -right-16 transition-all duration-500 ${isDark ? "translate-y-[200px]" : "translate-y-0"}`}>
-        <img src="src/assets/cloud.png" alt="cloud" />
+        <img src={cloud} alt="cloud" />
       </div>
 
       <div className={`absolute w-24 h-auto top-1 -right-8 transition-all duration-500 ${isDark ? "translate-y-[200px]" : "translate-y-0"}`}>
-        <img src="src/assets/birts.png" alt="birts" />
+        <img src={bird} alt="birts" />
       </div>
 
       <div className={`absolute top-1 -right-14 transition-all duration-500 ${isDark ? "translate-y-0" : "translate-y-[200px]"}`}>
-        <img src="src/assets/stars.png" alt="stars" />
+        <img src={star} alt="stars" />
       </div>
       {[20, 40, 60].map((offset, i) => (
         <div
