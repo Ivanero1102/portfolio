@@ -1,13 +1,20 @@
-import {Button} from "./components/ui/Button";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import { LanguageProvider } from "./context/LanguageContext";
+import AnimatedBackground from "./components/layout/AnimatedBackground";
 function App() {
 
   return (
-    <>
-      <Button className="ring-2 px-2 py-1 rounded-md ring-sky-400 bg-neutral-50 transition delay-150 duration-300 hover:bg-cyan-300 hover:ring-stone-400">
-        Curriculum Vitae / CV
-      </Button>
-    </>
-  )
+    <LanguageProvider>
+    <div className="min-h-screen  text-gray-900 dark:text-gray-100 transition duration-300">
+      <AnimatedBackground></AnimatedBackground>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" state={{ notFound: true }} />} />
+      </Routes>
+    </div>
+    </LanguageProvider>
+  );
 }
 
 export default App
