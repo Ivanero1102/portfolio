@@ -1,15 +1,13 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { CVAnchor } from "../ui/CVAnchor";
 import ContactPanel from "../ui/ContactPanel";
 import DarkModeToggle from "../ui/DarkModeToggle";
 import logo from "../../assets/logo.jpg";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
-import { LanguageContext } from "../../context/LanguageContext";
-import { translations } from "../../translation/translations";
 
 export default function Header() {
-  const { language } = useContext(LanguageContext);
-  const t = translations[language];
+
+
   const [open, setOpen] = useState(false);
 
   return (
